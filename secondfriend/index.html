@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second Friend — Real human support for college students</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a href="#" class="logo">
+        <img src="https://i.postimg.cc/NGCJkRvQ/Gemini-Generated-Image-p5ekltp5ekltp5ek.png" alt="Second Friend logo" style="height:40px;width:auto;display:block">
+      </a>
+      <ul class="nav-links">
+        <li><a class="nav-btn" href="#concerns">What Are You Feeling?</a></li>
+        <li><a class="nav-btn" href="#how-it-works">How It Works</a></li>
+        <li><a class="nav-btn" href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-cta">
+        <button class="btn btn-outline small" onclick="openModal('counselorLogin')">Counselor Login</button>
+        <button class="btn btn-outline small" onclick="openModal('studentLogin')">Student Login</button>
+        <button class="btn btn-primary small" onclick="openModal('studentSignup')">Student Signup</button>
+      </div>
+      <button id="menuBtn" aria-label="Open menu" onclick="toggleMenu()">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#2b2622" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+  </div>
+  <div id="mobileMenu">
+    <a class="nav-btn" href="#concerns" onclick="closeMenu()">What Are You Feeling?</a>
+    <a class="nav-btn" href="#how-it-works" onclick="closeMenu()">How It Works</a>
+    <a class="nav-btn" href="#faq" onclick="closeMenu()">FAQ</a>
+    <button class="btn btn-outline" style="margin-top:16px;width:100%" onclick="closeMenu();openModal('counselorLogin')">Counselor Login</button>
+    <button class="btn btn-outline" style="margin-top:8px;width:100%" onclick="closeMenu();openModal('studentLogin')">Student Login</button>
+    <button class="btn btn-primary" style="margin-top:8px;width:100%" onclick="closeMenu();openModal('studentSignup')">Student Signup</button>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Created by one struggling human, for another struggling human.</p>
+      <h1 class="display" style="margin-top:20px">You don't have to look okay to ask for help.</h1>
+      <p class="hero-sub">Second Friend gives college students a private way to talk to verified human counselors through text, audio, or video. No AI. No judgment.</p>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="openModal('studentSignup')">Student Signup</button>
+        <a href="#how-it-works" class="btn btn-outline">See How It Works</a>
+      </div>
+    </div>
+    <div class="layers">
+      <div class="layer-inner">
+        <span class="tag" style="color:var(--teal)">What they carry</span>
+        <p class="quote">&ldquo;Actually&hellip; I'm not fine.&rdquo;</p>
+      </div>
+      <div class="layer-outer">
+        <span class="tag" style="color:var(--terra)">What people see</span>
+        <div style="margin-top:24px"><div class="bar" style="width:80%"></div><div class="bar" style="width:62%"></div><div class="bar" style="width:71%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="statsbar reveal">
+  <div class="wrap stats-grid">
+    <div><strong>100%</strong><span>human counselors</span></div>
+    <div><strong>0</strong><span>AI bots, ever</span></div>
+    <div><strong>3 ways</strong><span>text · audio · video</span></div>
+    <div><strong>Private</strong><span>your words stay yours</span></div>
+  </div>
+</section>
+
+<section id="mission-vision" class="steps-bg">
+  <div class="wrap">
+    <div class="mv-grid">
+
+      <div class="mv-card reveal">
+        <span class="tag" style="color:var(--terra)">Our Mission</span>
+        <h3 class="display" style="font-size:clamp(1.5rem,3vw,2rem);margin-top:12px">The hardest conversation is often the first one. We're here to make it easier.</h3>
+        <p>Second Friend exists to give college students a private, comfortable way to take that first step and talk to a real human who's ready to listen.</p>
+      </div>
+
+      <div class="mv-card mv-teal reveal">
+        <span class="tag" style="color:var(--gold)">Our Vision</span>
+        <h3 class="display" style="font-size:clamp(1.5rem,3vw,2rem);margin-top:12px">A future where &ldquo;I&rsquo;m fine&rdquo; doesn&rsquo;t have to be the end of the conversation.</h3>
+        <p>We envision a world where no student feels they have to struggle silently just because asking for help feels harder than pretending everything is okay.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="concerns">
+  <div class="wrap">
+    <h2 class="display reveal">What are you carrying right now?</h2>
+    <p class="reveal" style="margin-top:20px;max-width:38rem;color:var(--ink-soft);font-size:1.125rem">Struggle doesn't always look dramatic. Click a card to see how it really shows up in a student's life.</p>
+    <div class="concerns reveal" id="concernGrid"></div>
+    <div class="concern-detail reveal" id="concernDetail">
+      <span class="tag" style="color:var(--terra)" id="cdTag"></span>
+      <h3 class="display" id="cdTitle"></h3>
+      <p id="cdLooks"></p>
+      <p class="quote" id="cdQuote"></p>
+      <button class="btn btn-primary" style="margin-top:24px" onclick="openModal('studentSignup')">I feel this too — Student Signup</button>
+    </div>
+  </div>
+</section>
+
+<section class="steps-bg" id="how-it-works">
+  <div class="wrap">
+    <h2 class="display reveal">How it works</h2>
+    <ol class="steps reveal">
+      <li class="step"><span class="step-num">01</span><h3>Pick how you want to talk</h3><p>Text, audio call, or video call — start with whatever feels easiest. You can switch anytime.</p></li>
+      <li class="step"><span class="step-num">02</span><h3>Get matched with a real counselor</h3><p>Verified professionals who specialize in student life — academics, relationships, anxiety, identity.</p></li>
+      <li class="step"><span class="step-num">03</span><h3>Talk privately</h3><p>Your sessions are confidential. Your college is never notified. Optional face blur on video.</p></li>
+      <li class="step"><span class="step-num">04</span><h3>Come back anytime</h3><p>No waiting rooms, no office visits. Support that fits between classes, at 2am if needed.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap story-wrap">
+    <span class="eyebrow">What inspired us</span>
+    <h2 class="display reveal" style="margin-top:16px">We didn't start Second Friend because mental health was a market opportunity. We started because we lost someone.</h2>
+    <div class="story-body reveal">
+      <p>One of my football buddies was struggling with depression, but like many people going through difficult times, what he was experiencing wasn't always visible to those around him. Accessing professional counseling also felt financially out of reach. When we lost him to suicide, it left us with a question we couldn't ignore:</p>
+      <blockquote class="story-quote">&ldquo;What if asking for help had felt easier, more accessible, or simply possible at the right time?&rdquo;</blockquote>
+      <p>We'll never know whether one conversation could have changed what happened, and we will never claim that Second Friend can save everyone. But his story made us realize how many people struggle silently — sometimes because they cannot afford support, sometimes because they fear judgment, and sometimes because taking that first step feels harder than pretending everything is okay.</p>
+      <p>Second Friend was born from that realization: to make it easier for students to reach a real human and start the conversation when they need it.</p>
+      <p><strong>We can't change what happened. But we can try to build a world where fewer people feel they have to face everything alone.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section id="signup">
+  <div class="wrap" style="max-width:640px;text-align:center">
+    <h2 class="display reveal">Ready when you are.</h2>
+    <p class="reveal" style="margin-top:20px;color:var(--ink-soft);font-size:1.125rem">Leave your email and we'll invite you as soon as we open spots at your college.</p>
+    <form class="reveal signup-form" action="#" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+      <button type="submit" class="btn btn-primary">Join the Waitlist</button>
+    </form>
+  </div>
+</section>
+
+<section class="apps">
+  <div class="wrap" style="text-align:center">
+    <h2 class="display reveal">Coming soon to your phone.</h2>
+    <p class="reveal" style="margin-top:16px;color:var(--ink-soft)">Support in your pocket — between classes, at 2am, wherever you are.</p>
+    <div class="badges reveal">
+      <a href="#" class="store-badge" aria-label="Coming soon on Google Play">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 3.5v17l13-8.5L4 3.5z" fill="#1f4e4a"/><path d="M17 12l3.5-2.2c.7.5.7 1.9 0 2.4L17 12z" fill="#e8a33d"/></svg>
+        <span><small>Get it on</small><strong>Google Play</strong></span>
+      </a>
+      <a href="#" class="store-badge" aria-label="Coming soon on the App Store">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="#1f4e4a"><path d="M16.6 12.9c0-2.4 2-3.6 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3.1 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.6-1-2.7-4zM14.4 5.6c.7-.8 1.1-1.9 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"/></svg>
+        <span><small>Download on the</small><strong>App Store</strong></span>
+      </a>
+    </div>
+    <p class="reveal" style="margin-top:12px;font-size:.75rem;color:var(--ink-soft)">(Launching soon — join the waitlist above to be notified)</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap" style="max-width:800px">
+    <h2 class="display reveal">Questions students ask us</h2>
+    <div class="faq-list reveal">
+
+      <details class="faq-item">
+        <summary>Why is Second Friend better than other mental health apps?</summary>
+        <p>Because you talk to a <strong>real human being</strong>, every single time. Most apps today quietly hand your struggles to a chatbot — a program that has never felt anxiety before an exam or homesickness at midnight. Our counselors have lived through real life and trained for years to help you through yours. You'll never be told "As an AI language model…" when you're at your lowest.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why NO AI? Isn't AI available 24/7?</summary>
+        <p>AI can imitate empathy, but it cannot feel it. Studies show AI chatbots sometimes give harmful advice in crisis situations, and they can't notice what a human notices — hesitation in your voice, silence between messages, the thing you're not saying. A real counselor earns your trust, remembers your story, and is accountable for your care. That's something no algorithm can offer. We'd rather be human than scalable.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is it confidential? Will my college find out?</summary>
+        <p>No. Your sessions are completely private. Your college, professors, and parents are never notified that you use Second Friend. Nothing appears on your academic record.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Who are the counselors?</summary>
+        <p>Verified professionals — psychologists and counselors who are background-checked, qualification-verified, and experienced specifically with college-age concerns like academic stress, relationships, anxiety, and identity.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if I'm in serious crisis right now?</summary>
+        <p>If you're thinking about harming yourself, please reach out immediately to the Government of India's national mental health helpline <strong>Tele-MANAS: 14416</strong> (available 24/7, free, in multiple languages). Second Friend is support for everyday struggles — for emergencies, always call Tele-MANAS first.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much does it cost?</summary>
+        <p>We're launching with colleges as partners, so many students will get access free through their institution. Individual plans will be affordable and announced at launch. Joining the waitlist is completely free.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="crisis reveal">
+      <strong>In crisis? You're not alone.</strong>
+      <span>Tele-MANAS (Government of India): <a href="tel:14416">14416</a> · Free · 24/7 · All languages</span>
+    </div>
+    <div class="foot-grid" style="margin-top:48px">
+      <div>
+        <img src="https://i.postimg.cc/NGCJkRvQ/Gemini-Generated-Image-p5ekltp5ekltp5ek.png" alt="Second Friend logo" style="height:44px;width:auto;display:block;margin-bottom:12px">
+        <p style="font-size:.875rem;color:var(--ink-soft);max-width:20rem">Created by one struggling human, for another struggling human. No AI. Ever.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#concerns">What Are You Feeling?</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:jebasinghjoel4857@gmail.com">jebasinghjoel4857@gmail.com</a></li>
+          <li><a href="#signup">Join the Waitlist</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Emergency</h3>
+        <ul>
+          <li><a href="tel:14416">Tele-MANAS: 14416</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year"></span> Second Friend · secondfriend.in · If you are in immediate danger, call Tele-MANAS 14416</p>
+  </div>
+</footer>
+
+<!-- ===== LOGIN / SIGNUP MODALS ===== -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModals()">
+  <div class="modal" role="dialog" aria-modal="true">
+
+    <!-- Counselor Login -->
+    <form class="modal-panel" id="counselorLogin" onsubmit="handleAuth(event,'Welcome back, Counselor!')">
+      <button type="button" class="modal-close" onclick="closeModals()" aria-label="Close">&times;</button>
+      <span class="tag" style="color:var(--teal)">For verified professionals</span>
+      <h3 class="display">Counselor Login</h3>
+      <input type="email" placeholder="Your email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit" class="btn btn-primary" style="width:100%">Log In</button>
+      <p class="modal-alt">New here? <a href="#" onclick="switchModal('counselorSignup');return false;">Sign up as a counselor</a></p>
+    </form>
+
+    <!-- Student Login -->
+    <form class="modal-panel" id="studentLogin" onsubmit="handleAuth(event,'Welcome back! Your safe space is waiting.')">
+      <button type="button" class="modal-close" onclick="closeModals()" aria-label="Close">&times;</button>
+      <span class="tag" style="color:var(--terra)">For students</span>
+      <h3 class="display">Student Login</h3>
+      <input type="email" placeholder="College email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit" class="btn btn-primary" style="width:100%">Log In</button>
+      <p class="modal-alt">Don't have an account yet? <a href="#" onclick="switchModal('studentSignup');return false;">Sign up</a></p>
+    </form>
+
+    <!-- Student Signup -->
+    <form class="modal-panel" id="studentSignup" onsubmit="handleAuth(event,'Welcome to Second Friend! Check your email to verify your account.')">
+      <button type="button" class="modal-close" onclick="closeModals()" aria-label="Close">&times;</button>
+      <span class="tag" style="color:var(--terra)">Real humans. Zero judgment.</span>
+      <h3 class="display">Student Signup</h3>
+      <input type="text" placeholder="Full name" required>
+      <input type="email" placeholder="College email" required>
+      <input type="password" placeholder="Create password" required minlength="8">
+      <p class="modal-note">Your sessions stay private. Your college is never notified. No AI — only real humans.</p>
+      <button type="submit" class="btn btn-primary" style="width:100%">Create Account</button>
+      <p class="modal-alt">Already have an account? <a href="#" onclick="switchModal('studentLogin');return false;">Log in</a></p>
+    </form>
+
+    <!-- Counselor Sign Up -->
+    <form class="modal-panel" id="counselorSignup" onsubmit="handleAuth(event,'Application received! Our team will verify your credentials within 48 hours.')">
+      <button type="button" class="modal-close" onclick="closeModals()" aria-label="Close">&times;</button>
+      <span class="tag" style="color:var(--teal)">Join our human team · No AI, ever</span>
+      <h3 class="display">Counselor Sign Up</h3>
+      <input type="text" placeholder="Full name" required>
+      <input type="email" placeholder="Email address" required>
+      <input type="text" placeholder="Qualification (e.g., M.A. Psychology)" required>
+      <input type="text" placeholder="Years of experience" required>
+      <p class="modal-note">Every counselor is background-checked and qualification-verified before joining Second Friend.</p>
+      <button type="submit" class="btn btn-primary" style="width:100%">Apply as Counselor</button>
+      <p class="modal-alt">Already registered? <a href="#" onclick="switchModal('counselorLogin');return false;">Log in</a></p>
+    </form>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
