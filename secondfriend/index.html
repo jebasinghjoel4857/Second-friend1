@@ -11,9 +11,7 @@
 <header>
   <div class="wrap">
     <nav aria-label="Main">
-      <a href="#" class="logo">
-        <img src="https://i.postimg.cc/NGCJkRvQ/Gemini-Generated-Image-p5ekltp5ekltp5ek.png" alt="Second Friend logo" style="height:40px;width:auto;display:block">
-      </a>
+      <a href="#" class="logo-text"><span class="dot"></span>SECOND FRIEND</a>
       <ul class="nav-links">
         <li><a class="nav-btn" href="#concerns">What Are You Feeling?</a></li>
         <li><a class="nav-btn" href="#how-it-works">How It Works</a></li>
@@ -139,7 +137,7 @@
   <div class="wrap" style="max-width:640px;text-align:center">
     <h2 class="display reveal">Ready when you are.</h2>
     <p class="reveal" style="margin-top:20px;color:var(--ink-soft);font-size:1.125rem">Leave your email and we'll invite you as soon as we open spots at your college.</p>
-    <form class="reveal signup-form" action="#" method="POST">
+    <form class="reveal signup-form" action="#" method="POST" onsubmit="handleWaitlist(event)">
       <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
       <button type="submit" class="btn btn-primary">Join the Waitlist</button>
     </form>
@@ -213,7 +211,7 @@
     </div>
     <div class="foot-grid" style="margin-top:48px">
       <div>
-        <img src="https://i.postimg.cc/NGCJkRvQ/Gemini-Generated-Image-p5ekltp5ekltp5ek.png" alt="Second Friend logo" style="height:44px;width:auto;display:block;margin-bottom:12px">
+        <span class="logo-text" style="margin-bottom:12px;display:inline-flex"><span class="dot"></span>SECOND FRIEND</span>
         <p style="font-size:.875rem;color:var(--ink-soft);max-width:20rem">Created by one struggling human, for another struggling human. No AI. Ever.</p>
       </div>
       <div>
@@ -247,7 +245,6 @@
 <div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModals()">
   <div class="modal" role="dialog" aria-modal="true">
 
-    <!-- Counselor Login -->
     <form class="modal-panel" id="counselorLogin" onsubmit="handleAuth(event,'Welcome back, Counselor!')">
       <button type="button" class="modal-close" onclick="closeModals()" aria-label="Close">&times;</button>
       <span class="tag" style="color:var(--teal)">For verified professionals</span>
@@ -258,7 +255,6 @@
       <p class="modal-alt">New here? <a href="#" onclick="switchModal('counselorSignup');return false;">Sign up as a counselor</a></p>
     </form>
 
-    <!-- Student Login -->
     <form class="modal-panel" id="studentLogin" onsubmit="handleAuth(event,'Welcome back! Your safe space is waiting.')">
       <button type="button" class="modal-close" onclick="closeModals()" aria-label="Close">&times;</button>
       <span class="tag" style="color:var(--terra)">For students</span>
@@ -269,7 +265,6 @@
       <p class="modal-alt">Don't have an account yet? <a href="#" onclick="switchModal('studentSignup');return false;">Sign up</a></p>
     </form>
 
-    <!-- Student Signup -->
     <form class="modal-panel" id="studentSignup" onsubmit="handleAuth(event,'Welcome to Second Friend! Check your email to verify your account.')">
       <button type="button" class="modal-close" onclick="closeModals()" aria-label="Close">&times;</button>
       <span class="tag" style="color:var(--terra)">Real humans. Zero judgment.</span>
@@ -282,7 +277,6 @@
       <p class="modal-alt">Already have an account? <a href="#" onclick="switchModal('studentLogin');return false;">Log in</a></p>
     </form>
 
-    <!-- Counselor Sign Up -->
     <form class="modal-panel" id="counselorSignup" onsubmit="handleAuth(event,'Application received! Our team will verify your credentials within 48 hours.')">
       <button type="button" class="modal-close" onclick="closeModals()" aria-label="Close">&times;</button>
       <span class="tag" style="color:var(--teal)">Join our human team · No AI, ever</span>
